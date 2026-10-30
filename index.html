@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyễn Văn Nam | AI Engineer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Nguyễn Văn Nam — AI Engineer (Fresher) specializing in Machine Learning, Deep Learning, RAG Systems, FastAPI, and MLOps." />
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Interactive Neural Network Background Canvas -->
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+  <div class="ambient-glow glow-violet" aria-hidden="true"></div>
+  <div class="ambient-glow glow-emerald" aria-hidden="true"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Nguyễn Văn Nam Home">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">NAM</span>
+        <span class="logo-dot">.AI</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-link active" data-i18n="nav_home">Overview</a>
+        <a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a>
+        <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+        <a href="#education" class="nav-link" data-i18n="nav_edu">Education & Languages</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="lang-toggle" id="lang-toggle" title="Switch Language (EN / VI)">
+          <span class="lang-opt active" data-lang="en">EN</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-opt" data-lang="vi">VI</span>
+        </button>
+
+        <button type="button" class="btn btn-outline btn-sm" id="print-btn" title="Print / Save as PDF">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9V2h12v7" />
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="8" />
+          </svg>
+          <span data-i18n="btn_cv">Print CV</span>
+        </button>
+
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section section" id="hero">
+      <div class="container hero-grid">
+        <!-- Left Column: Intro & CTA -->
+        <div class="hero-content reveal">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span data-i18n="hero_status">Available for AI Engineer Opportunities • Hanoi, Vietnam</span>
+          </div>
+
+          <p class="hero-greeting" data-i18n="hero_greeting">Hello, I am</p>
+          <h1 class="hero-title">
+            <span class="gradient-text">NGUYỄN VĂN NAM</span>
+          </h1>
+
+          <div class="hero-role-wrapper">
+            <span class="role-badge">AI ENGINEER</span>
+            <span class="role-divider">|</span>
+            <span class="role-subbadge">FRESHER</span>
+            <span class="typewriter-container">
+              <span class="typewriter-prefix">&gt;</span>
+              <span id="typewriter-text" class="typewriter-text">Deep Learning &amp; RAG Systems</span>
+              <span class="cursor">|</span>
+            </span>
+          </div>
+
+          <p class="hero-summary" data-i18n="hero_summary">
+            Passionate <strong>AI Engineer</strong> with a strong foundation in <span class="text-cyan">Machine
+              Learning</span>, <span class="text-violet">Deep Learning (PyTorch)</span>, and <span
+              class="text-emerald">Retrieval-Augmented Generation (RAG)</span>. Experienced in building end-to-end AI
+            pipelines—from feature engineering and model training to production-ready <span
+              class="text-cyan">FastAPI</span> microservices, <span class="text-violet">MLflow</span> tracking, and
+            <span class="text-emerald">Docker</span> containerization.
+          </p>
+
+          <!-- Quick Contact Chips -->
+          <div class="hero-contact-bar">
+            <button type="button" class="contact-chip copy-trigger" data-copy="nambuu@gmail.com"
+              title="Click to copy email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <span>nambuu@gmail.com</span>
+              <span class="chip-action" data-i18n="copy_tag">Copy</span>
+            </button>
+
+            <button type="button" class="contact-chip copy-trigger" data-copy="0356827852"
+              title="Click to copy phone number">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>0356827852</span>
+              <span class="chip-action" data-i18n="copy_tag">Copy</span>
+            </button>
+
+            <a href="https://github.com/nambuu" target="_blank" rel="noopener noreferrer" class="contact-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+              <span>github.com/nambuu</span>
+              <span class="chip-action">↗</span>
+            </a>
+
+            <div class="contact-chip location-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Hanoi, Vietnam</span>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="btn_explore_projects">Explore AI Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a href="mailto:nambuu@gmail.com" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span data-i18n="btn_hire_me">Contact Me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Framed Portrait with Floating AI Badges -->
+        <div class="hero-visual reveal">
+          <div class="avatar-stage" id="avatar-stage">
+            <!-- Rotating Neural Rings -->
+            <div class="orbital-ring ring-outer"></div>
+            <div class="orbital-ring ring-inner"></div>
+
+            <!-- Main Avatar Portrait Frame -->
+            <div class="avatar-frame">
+              <img src="avarta.jpg" alt="Nguyễn Văn Nam — AI Engineer" class="avatar-img" />
+              <div class="avatar-overlay-gradient"></div>
+            </div>
+
+            <!-- Floating Highlight Badges around Portrait -->
+            <div class="floating-badge badge-top-left">
+              <span class="badge-icon">🧠</span>
+              <div>
+                <div class="badge-title">PyTorch &amp; DL</div>
+                <div class="badge-sub">CNN • RNN • LSTM</div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-top-right">
+              <span class="badge-icon">⚡</span>
+              <div>
+                <div class="badge-title">RAG &amp; FAISS</div>
+                <div class="badge-sub">LangChain • Vector DB</div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <span class="badge-icon">🚀</span>
+              <div>
+                <div class="badge-title">FastAPI &amp; MLOps</div>
+                <div class="badge-sub">Docker • MLflow</div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right">
+              <span class="badge-icon">🌐</span>
+              <div>
+                <div class="badge-title">English C1</div>
+                <div class="badge-sub">Advanced Fluency</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Metrics Highlight Ribbon -->
+      <div class="container">
+        <div class="metrics-ribbon reveal">
+          <div class="metric-item">
+            <div class="metric-value text-cyan">3.3<span class="metric-unit">/4.0</span></div>
+            <div class="metric-label" data-i18n="metric_gpa">GPA at VNU-IS (2023–2027)</div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <div class="metric-value text-emerald">C1</div>
+            <div class="metric-label" data-i18n="metric_eng">Advanced English Proficiency</div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <div class="metric-value text-violet">2</div>
+            <div class="metric-label" data-i18n="metric_proj">End-to-End Production AI Systems</div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <div class="metric-value text-amber">9</div>
+            <div class="metric-label" data-i18n="metric_skills">Core AI, Backend &amp; MLOps Domains</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TECHNICAL SKILLS SECTION ==================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="skills_eyebrow">CORE COMPETENCIES</span>
+          <h2 class="section-title" data-i18n="skills_title">Technical <span class="gradient-text">Skills Arsenal</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="skills_subtitle">
+            Full-lifecycle AI Engineering capabilities spanning model research, data engineering, high-performance API
+            deployment, and MLOps automation.
+          </p>
+        </div>
+
+        <!-- Interactive Category Filters -->
+        <div class="skills-filter-bar reveal" role="tablist" aria-label="Skill Category Filter">
+          <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter_all">All Domains
+            (9)</button>
+          <button type="button" class="filter-btn" data-filter="ai-ml" data-i18n="filter_ai">AI, ML &amp; Deep
+            Learning</button>
+          <button type="button" class="filter-btn" data-filter="data-code" data-i18n="filter_data">Programming &amp;
+            Data</button>
+          <button type="button" class="filter-btn" data-filter="backend-db" data-i18n="filter_backend">Backend &amp;
+            Databases</button>
+          <button type="button" class="filter-btn" data-filter="mlops-devops" data-i18n="filter_mlops">MLOps, DevOps
+            &amp; Cloud</button>
+        </div>
+
+        <!-- 9 Categorized Skill Cards -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- 1. Programming -->
+          <article class="skill-card spotlight-card reveal" data-category="data-code">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_programming">Programming</h3>
+                <span class="skill-card-meta" data-i18n="meta_programming">Core Languages</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-cyan" data-tech="Python">★ Python</span>
+              <span class="skill-tag highlight-cyan" data-tech="C++">C++</span>
+              <span class="skill-tag highlight-cyan" data-tech="SQL">SQL</span>
+            </div>
+          </article>
+
+          <!-- 2. Machine Learning -->
+          <article class="skill-card spotlight-card reveal" data-category="ai-ml">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-emerald">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3v18h18" />
+                  <path d="m19 9-5 5-4-4-3 3" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_ml">Machine Learning</h3>
+                <span class="skill-card-meta" data-i18n="meta_ml">Predictive Modeling &amp; Optimization</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-emerald" data-tech="Scikit-learn">★ Scikit-learn</span>
+              <span class="skill-tag" data-tech="Classification">Classification</span>
+              <span class="skill-tag" data-tech="Regression">Regression</span>
+              <span class="skill-tag" data-tech="Clustering">Clustering</span>
+              <span class="skill-tag highlight-emerald" data-tech="Feature Engineering">★ Feature Engineering</span>
+              <span class="skill-tag" data-tech="Hyperparameter Tuning">Hyperparameter Tuning</span>
+            </div>
+          </article>
+
+          <!-- 3. Deep Learning -->
+          <article class="skill-card spotlight-card reveal" data-category="ai-ml">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-violet">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 2v7" />
+                  <path d="M12 15v7" />
+                  <path d="m4.93 4.93 4.95 4.95" />
+                  <path d="m14.12 14.12 4.95 4.95" />
+                  <path d="M2 12h7" />
+                  <path d="M15 12h7" />
+                  <path d="m4.93 19.07 4.95-4.95" />
+                  <path d="m14.12 9.88 4.95-4.95" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_dl">Deep Learning</h3>
+                <span class="skill-card-meta" data-i18n="meta_dl">Neural Architectures</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-violet" data-tech="PyTorch">★ PyTorch</span>
+              <span class="skill-tag" data-tech="CNN">CNN</span>
+              <span class="skill-tag" data-tech="RNN">RNN</span>
+              <span class="skill-tag" data-tech="LSTM">LSTM</span>
+              <span class="skill-tag highlight-violet" data-tech="Transfer Learning">★ Transfer Learning</span>
+            </div>
+          </article>
+
+          <!-- 4. Data Processing -->
+          <article class="skill-card spotlight-card reveal" data-category="data-code">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                  <path d="M3 12A9 3 0 0 0 21 12" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_data">Data Processing</h3>
+                <span class="skill-card-meta" data-i18n="meta_data">Analytics &amp; Visualization</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-cyan" data-tech="NumPy">★ NumPy</span>
+              <span class="skill-tag highlight-cyan" data-tech="Pandas">★ Pandas</span>
+              <span class="skill-tag" data-tech="Matplotlib">Matplotlib</span>
+              <span class="skill-tag" data-tech="Seaborn">Seaborn</span>
+            </div>
+          </article>
+
+          <!-- 5. Backend -->
+          <article class="skill-card spotlight-card reveal" data-category="backend-db">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-emerald">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_backend">Backend</h3>
+                <span class="skill-card-meta" data-i18n="meta_backend">AI Model Serving &amp; APIs</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-emerald" data-tech="FastAPI">★ FastAPI</span>
+              <span class="skill-tag highlight-emerald" data-tech="RESTful API">RESTful API</span>
+              <span class="skill-tag" data-tech="Pydantic">Pydantic</span>
+            </div>
+          </article>
+
+          <!-- 6. Database -->
+          <article class="skill-card spotlight-card reveal" data-category="backend-db">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-amber">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 6c0 1.66 3.58 3 8 3s8-1.34 8-3-3.58-3-8-3-8 1.34-8 3" />
+                  <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
+                  <path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_db">Database</h3>
+                <span class="skill-card-meta" data-i18n="meta_db">Relational, NoSQL &amp; In-Memory</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-tech="MySQL">MySQL</span>
+              <span class="skill-tag highlight-amber" data-tech="PostgreSQL">★ PostgreSQL</span>
+              <span class="skill-tag" data-tech="MongoDB">MongoDB</span>
+              <span class="skill-tag highlight-amber" data-tech="Redis">★ Redis</span>
+            </div>
+          </article>
+
+          <!-- 7. DevOps & Tools -->
+          <article class="skill-card spotlight-card reveal" data-category="mlops-devops">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_devops">DevOps &amp; Tools</h3>
+                <span class="skill-card-meta" data-i18n="meta_devops">Containerization &amp; Workflow</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-cyan" data-tech="Docker">★ Docker</span>
+              <span class="skill-tag highlight-cyan" data-tech="Docker Compose">★ Docker Compose</span>
+              <span class="skill-tag" data-tech="Git">Git</span>
+              <span class="skill-tag" data-tech="GitHub">GitHub</span>
+              <span class="skill-tag" data-tech="Git Flow">Git Flow</span>
+              <span class="skill-tag" data-tech="Linux">Linux</span>
+              <span class="skill-tag" data-tech="Postman">Postman</span>
+            </div>
+          </article>
+
+          <!-- 8. MLOps -->
+          <article class="skill-card spotlight-card reveal" data-category="mlops-devops">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-violet">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 20v-6M6 20V10M18 20V4" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_mlops">MLOps</h3>
+                <span class="skill-card-meta" data-i18n="meta_mlops">Lifecycle &amp; Experiment Management</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-violet" data-tech="MLflow">★ MLflow</span>
+              <span class="skill-tag highlight-violet" data-tech="Model Versioning">Model Versioning</span>
+              <span class="skill-tag" data-tech="Experiment Tracking">Experiment Tracking</span>
+            </div>
+          </article>
+
+          <!-- 9. Deployment -->
+          <article class="skill-card spotlight-card reveal" data-category="mlops-devops">
+            <div class="skill-card-header">
+              <div class="skill-icon icon-emerald">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-card-title" data-i18n="cat_deploy">Deployment</h3>
+                <span class="skill-card-meta" data-i18n="meta_deploy">Automation &amp; Cloud Delivery</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight-emerald" data-tech="CI/CD">★ CI/CD</span>
+              <span class="skill-tag highlight-emerald" data-tech="GitHub Actions">★ GitHub Actions</span>
+              <span class="skill-tag" data-tech="Cloud Deployment">Cloud Deployment</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED PROJECTS SECTION ==================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="proj_eyebrow">PRODUCTION-READY AI SYSTEMS</span>
+          <h2 class="section-title" data-i18n="proj_title">Featured <span class="gradient-text">AI Projects</span></h2>
+          <p class="section-subtitle" data-i18n="proj_subtitle">
+            End-to-end engineering projects combining state-of-the-art Machine Learning / Deep Learning models with
+            scalable APIs and containerized deployment.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          <!-- PROJECT 1: Intelligent Document Processing & RAG System -->
+          <article class="project-card spotlight-card reveal">
+            <div class="project-badge-row">
+              <span class="project-number">PROJECT 01</span>
+              <span class="project-domain-pill pill-cyan">NLP • LLM • Vector Search • Microservices</span>
+            </div>
+
+            <div class="project-main-grid">
+              <div class="project-info">
+                <h3 class="project-title">
+                  Intelligent Document Processing &amp; <span class="text-cyan">RAG System</span>
+                </h3>
+
+                <!-- Interactive Pipeline Flow -->
+                <div class="pipeline-box" aria-label="RAG System Architecture Pipeline">
+                  <div class="pipeline-label" data-i18n="proj1_pipe_title">SYSTEM PIPELINE ARCHITECTURE</div>
+                  <div class="pipeline-steps">
+                    <span class="pipe-step">Document Parsing</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step">Text Chunking</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step active-cyan">HF Embeddings</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step active-violet">FAISS Vector Index</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step active-emerald">FastAPI RAG QA</span>
+                  </div>
+                </div>
+
+                <ul class="project-highlights">
+                  <li data-i18n="proj1_b1">
+                    Developed an AI-powered <strong>document question-answering system</strong> using <span
+                      class="kw kw-cyan">RAG (Retrieval-Augmented Generation)</span>.
+                  </li>
+                  <li data-i18n="proj1_b2">
+                    Implemented end-to-end <span class="kw kw-violet">document parsing</span>, <span
+                      class="kw kw-violet">text chunking</span>, <span class="kw kw-cyan">embedding generation</span>
+                    and <span class="kw kw-emerald">semantic search</span>.
+                  </li>
+                  <li data-i18n="proj1_b3">
+                    Integrated <span class="kw kw-cyan">FAISS</span> for high-speed, efficient <strong>vector similarity
+                      retrieval</strong> across large document collections.
+                  </li>
+                  <li data-i18n="proj1_b4">
+                    Built production-grade, asynchronous <strong>RESTful APIs</strong> using <span
+                      class="kw kw-emerald">FastAPI</span> and <span class="kw">PostgreSQL</span>.
+                  </li>
+                  <li data-i18n="proj1_b5">
+                    Containerized and orchestrated multi-container services using <span class="kw kw-amber">Docker
+                      Compose</span>.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tech Stack Side Panel -->
+              <div class="project-stack-panel">
+                <div class="stack-panel-title" data-i18n="tech_stack_label">TECH STACK &amp; TOOLS</div>
+                <div class="stack-chips">
+                  <span class="stack-chip core">Python</span>
+                  <span class="stack-chip core">PyTorch</span>
+                  <span class="stack-chip core">Hugging Face</span>
+                  <span class="stack-chip core">LangChain</span>
+                  <span class="stack-chip accent-cyan">FAISS</span>
+                  <span class="stack-chip accent-emerald">FastAPI</span>
+                  <span class="stack-chip">PostgreSQL</span>
+                  <span class="stack-chip accent-violet">Docker</span>
+                </div>
+
+                <div class="project-impact-box">
+                  <div class="impact-header" data-i18n="proj1_impact_title">KEY ENGINEERING HIGHLIGHTS</div>
+                  <div class="impact-metrics">
+                    <div class="mini-metric">
+                      <span class="mini-val text-cyan">Semantic QA</span>
+                      <span class="mini-lbl" data-i18n="proj1_m1">Context-Aware Retrieval</span>
+                    </div>
+                    <div class="mini-metric">
+                      <span class="mini-val text-emerald">FastAPI + Docker</span>
+                      <span class="mini-lbl" data-i18n="proj1_m2">Modular Container Stack</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Real-time AI Fraud Detection System -->
+          <article class="project-card spotlight-card reveal">
+            <div class="project-badge-row">
+              <span class="project-number">PROJECT 02</span>
+              <span class="project-domain-pill pill-violet">Real-Time ML • Imbalanced Learning • MLOps</span>
+            </div>
+
+            <div class="project-main-grid">
+              <div class="project-info">
+                <h3 class="project-title">
+                  Real-time AI <span class="text-violet">Fraud Detection System</span>
+                </h3>
+
+                <!-- Interactive Pipeline Flow -->
+                <div class="pipeline-box" aria-label="Fraud Detection Architecture Pipeline">
+                  <div class="pipeline-label" data-i18n="proj2_pipe_title">MLOPS &amp; INFERENCE PIPELINE</div>
+                  <div class="pipeline-steps">
+                    <span class="pipe-step">Feature Eng &amp; SMOTE</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step active-violet">RF / XGBoost / DL</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step active-amber">MLflow Registry</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step active-cyan">Redis + FastAPI</span>
+                    <span class="pipe-arrow">→</span>
+                    <span class="pipe-step active-emerald">Docker Deploy</span>
+                  </div>
+                </div>
+
+                <ul class="project-highlights">
+                  <li data-i18n="proj2_b1">
+                    Developed an end-to-end <strong>machine learning pipeline</strong> for real-time <span
+                      class="kw kw-violet">fraudulent transaction detection</span>.
+                  </li>
+                  <li data-i18n="proj2_b2">
+                    Applied advanced <span class="kw kw-cyan">feature engineering</span> and solved severe class
+                    imbalance using <span class="kw kw-emerald">SMOTE</span>.
+                  </li>
+                  <li data-i18n="proj2_b3">
+                    Trained, tuned, and benchmarked <span class="kw kw-cyan">Random Forest</span>, <span
+                      class="kw kw-violet">XGBoost</span>, and <span class="kw kw-emerald">Neural Networks
+                      (PyTorch)</span>.
+                  </li>
+                  <li data-i18n="proj2_b4">
+                    Rigorously evaluated models using <span class="kw kw-amber">Precision</span>, <span
+                      class="kw kw-amber">Recall</span>, <span class="kw kw-amber">F1-score</span>, <span
+                      class="kw kw-cyan">ROC-AUC</span>, and <span class="kw kw-emerald">PR-AUC</span>.
+                  </li>
+                  <li data-i18n="proj2_b5">
+                    Integrated the champion model into a low-latency <span class="kw kw-emerald">FastAPI inference
+                      service</span> backed by <span class="kw">Redis</span> &amp; <span class="kw">PostgreSQL</span>.
+                  </li>
+                  <li data-i18n="proj2_b6">
+                    Used <span class="kw kw-violet">MLflow</span> for experiment tracking and model versioning, with
+                    full <span class="kw kw-cyan">Docker-based deployment</span>.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tech Stack Side Panel -->
+              <div class="project-stack-panel">
+                <div class="stack-panel-title" data-i18n="tech_stack_label">TECH STACK &amp; TOOLS</div>
+                <div class="stack-chips">
+                  <span class="stack-chip core">Python</span>
+                  <span class="stack-chip core">PyTorch</span>
+                  <span class="stack-chip core">Scikit-learn</span>
+                  <span class="stack-chip accent-violet">XGBoost</span>
+                  <span class="stack-chip">Pandas</span>
+                  <span class="stack-chip accent-emerald">FastAPI</span>
+                  <span class="stack-chip accent-amber">Redis</span>
+                  <span class="stack-chip">PostgreSQL</span>
+                  <span class="stack-chip accent-cyan">Docker</span>
+                  <span class="stack-chip accent-violet">MLflow</span>
+                </div>
+
+                <div class="project-impact-box">
+                  <div class="impact-header" data-i18n="proj2_impact_title">EVALUATION &amp; MLOPS METRICS</div>
+                  <div class="evaluation-pills">
+                    <span class="eval-pill">Precision</span>
+                    <span class="eval-pill">Recall</span>
+                    <span class="eval-pill highlight">F1-Score</span>
+                    <span class="eval-pill highlight">ROC-AUC</span>
+                    <span class="eval-pill highlight">PR-AUC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION & LANGUAGES SECTION ==================== -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="edu_eyebrow">ACADEMIC &amp; GLOBAL READINESS</span>
+          <h2 class="section-title" data-i18n="edu_title">Education &amp; <span class="gradient-text">Languages</span>
+          </h2>
+        </div>
+
+        <div class="bento-two-col">
+          <!-- Education Card -->
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-header">
+              <div class="bento-icon icon-cyan">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+              </div>
+              <span class="bento-tag" data-i18n="edu_badge">EDUCATION</span>
+            </div>
+
+            <div class="edu-body">
+              <div class="edu-top-row">
+                <div>
+                  <h3 class="edu-school">VNU-IS</h3>
+                  <p class="edu-fullname" data-i18n="edu_school_sub">International School — Vietnam National University,
+                    Hanoi</p>
+                </div>
+                <span class="edu-period">2023 – 2027</span>
+              </div>
+
+              <div class="gpa-showcase">
+                <div class="gpa-left">
+                  <span class="gpa-label" data-i18n="gpa_label">Cumulative GPA</span>
+                  <span class="gpa-score">3.3 <small>/ 4.0</small></span>
+                </div>
+                <div class="gpa-bar-wrap" aria-label="GPA 3.3 out of 4.0">
+                  <div class="gpa-bar-fill" style="width: 82.5%"></div>
+                </div>
+                <span class="gpa-status" data-i18n="gpa_rank">Very Good Standing</span>
+              </div>
+
+              <div class="edu-focus-tags">
+                <span class="focus-chip" data-i18n="edu_f1">Artificial Intelligence</span>
+                <span class="focus-chip" data-i18n="edu_f2">Data Structures &amp; Algorithms</span>
+                <span class="focus-chip" data-i18n="edu_f3">Machine Learning &amp; MLOps</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Languages Card -->
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-header">
+              <div class="bento-icon icon-emerald">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </div>
+              <span class="bento-tag tag-emerald" data-i18n="lang_badge">LANGUAGES</span>
+            </div>
+
+            <div class="lang-body">
+              <!-- English C1 Highlight -->
+              <div class="lang-item featured-lang">
+                <div class="lang-info-row">
+                  <div>
+                    <h3 class="lang-name">English</h3>
+                    <p class="lang-desc" data-i18n="lang_en_desc">Professional working &amp; technical research fluency
+                    </p>
+                  </div>
+                  <div class="cefr-badge">
+                    <span class="cefr-code">C1</span>
+                    <span class="cefr-text">Advanced</span>
+                  </div>
+                </div>
+                <div class="cefr-scale" aria-label="CEFR Level C1 Advanced">
+                  <span class="step passed">A1</span>
+                  <span class="step passed">A2</span>
+                  <span class="step passed">B1</span>
+                  <span class="step passed">B2</span>
+                  <span class="step current">C1 ★</span>
+                  <span class="step">C2</span>
+                </div>
+              </div>
+
+              <!-- Vietnamese Native -->
+              <div class="lang-item">
+                <div class="lang-info-row">
+                  <div>
+                    <h3 class="lang-name">Vietnamese</h3>
+                    <p class="lang-desc" data-i18n="lang_vi_desc">Mother tongue • Full native communication</p>
+                  </div>
+                  <div class="native-badge" data-i18n="lang_native">Native</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card spotlight-card reveal">
+          <div class="contact-header">
+            <span class="section-eyebrow" data-i18n="contact_eyebrow">LET'S BUILD INTELLIGENT SYSTEMS TOGETHER</span>
+            <h2 class="section-title" data-i18n="contact_title">Get In <span class="gradient-text">Touch</span></h2>
+            <p class="section-subtitle" data-i18n="contact_subtitle">
+              I am actively seeking <strong>AI Engineer / Machine Learning Engineer (Fresher)</strong> opportunities in
+              Hanoi or Remote. Click any channel below to connect or copy my details instantly.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Email Box -->
+            <div class="contact-box">
+              <div class="contact-box-icon icon-cyan">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </div>
+              <div class="contact-box-label">Email</div>
+              <a href="mailto:nambuu@gmail.com" class="contact-box-value">nambuu@gmail.com</a>
+              <div class="contact-box-actions">
+                <a href="mailto:nambuu@gmail.com" class="mini-btn primary" data-i18n="send_email">Send Email</a>
+                <button type="button" class="mini-btn copy-trigger" data-copy="nambuu@gmail.com"
+                  data-i18n="copy_btn">Copy</button>
+              </div>
+            </div>
+
+            <!-- Phone Box -->
+            <div class="contact-box">
+              <div class="contact-box-icon icon-emerald">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div class="contact-box-label" data-i18n="phone_label">Phone / Zalo</div>
+              <a href="tel:0356827852" class="contact-box-value">0356827852</a>
+              <div class="contact-box-actions">
+                <a href="tel:0356827852" class="mini-btn primary" data-i18n="call_now">Call Now</a>
+                <button type="button" class="mini-btn copy-trigger" data-copy="0356827852"
+                  data-i18n="copy_btn">Copy</button>
+              </div>
+            </div>
+
+            <!-- GitHub Box -->
+            <div class="contact-box">
+              <div class="contact-box-icon icon-violet">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                  <path d="M9 18c-4.51 2-5-2-7-2" />
+                </svg>
+              </div>
+              <div class="contact-box-label">GitHub</div>
+              <a href="https://github.com/nambuuu" target="_blank" rel="noopener noreferrer"
+                class="contact-box-value">github.com/nambuuu</a>
+              <div class="contact-box-actions">
+                <a href="https://github.com/nambuuu" target="_blank" rel="noopener noreferrer" class="mini-btn primary"
+                  data-i18n="open_github">View Profile ↗</a>
+                <button type="button" class="mini-btn copy-trigger" data-copy="https://github.com/nambuuu"
+                  data-i18n="copy_btn">Copy</button>
+              </div>
+            </div>
+
+            <!-- Location Box -->
+            <div class="contact-box">
+              <div class="contact-box-icon icon-amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="contact-box-label" data-i18n="loc_label">Location</div>
+              <div class="contact-box-value">Hanoi, Vietnam</div>
+              <div class="contact-box-actions">
+                <span class="loc-status" data-i18n="loc_ready">On-site / Hybrid / Remote</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 <strong>NGUYỄN VĂN NAM</strong> — AI Engineer Portfolio.</p>
+      <p class="footer-tech">Built with HTML5, CSS3 &amp; Vanilla JS • Fast, Responsive &amp; Accessible</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification for Clipboard Copy -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
